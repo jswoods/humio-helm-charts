@@ -43,7 +43,8 @@ data:
         Port ${FLUENT_ELASTICSEARCH_PORT}
         tls ${FLUENT_ELASTICSEARCH_TLS}
         tls.verify ${FLUENT_ELASTICSEARCH_TLS_VERIFY}
-        HTTP_User ${HUMIO_INGEST_TOKEN}
+        HTTP_User {{ .Values.humioRepoName }}
+        HTTP_Passwd ${HUMIO_INGEST_TOKEN}
         Logstash_Format On
         Retry_Limit False
         Type  flb_type
